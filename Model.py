@@ -7,7 +7,16 @@ import matplotlib.pyplot as plt
 import seaborn
 
 #Data fetching
-import fix_yahoo_finance as yf
+import yfinance as yf
 
-#Print tabular data
-from tabulate import tabulate
+#Calculate daily returns
+df = yf.download('GOOG')
+df = yf.download('MSFT')
+df = yf.download('AAPL')
+df['returns'] = df.Close.pct_change()
+df = df.dropna()
+plt.hist(df.returns, bins=40)
+plt.xlabel('Returns')
+plt.ylabel('Frequency')
+plt.grid(True)
+plt.show()
