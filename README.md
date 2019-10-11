@@ -1,5 +1,5 @@
 # ValueAtRisk-Model-Equities
- VaR model for Equity portfolio
+ VaR model for Equity portfolio consisting of GOOG, MSFT and AAPL.
 
 Output:
 
