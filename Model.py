@@ -13,9 +13,10 @@ import yfinance as yf
 from tabulate import tabulate
 
 #Calculate daily returns
-df = yf.download('GOOG')
-df = yf.download('MSFT')
-df = yf.download('AAPL')
+df = yf.download('ETH-USD')
+#df = yf.download('BTC-USD')
+
+#df = yf.download('AAPL')
 df['returns'] = df.Close.pct_change()
 df = df.dropna()
 plt.hist(df.returns, bins=40)
@@ -25,7 +26,7 @@ plt.grid(True)
 plt.show()
 
 #Sort the returns
-df.sort_values('returns', inplace = True, ascending = True)
+#df.sort_values('returns', inplace = True, ascending = True)
 
 #Calculate Value at Risk
 VaR_90 = df['returns'].quantile(0.1)
