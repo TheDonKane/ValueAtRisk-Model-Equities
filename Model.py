@@ -4,7 +4,7 @@ import pandas as pd
 
 #Plotting
 import matplotlib.pyplot as plt
-#import seaborn
+import seaborn
 
 #Data fetching
 import yfinance as yf
